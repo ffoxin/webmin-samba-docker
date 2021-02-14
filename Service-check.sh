@@ -3,7 +3,7 @@ apt-get update && apt-get upgrade -y
 wait
 if [ ! -f /data/webmin/config ];
 then
-cp -r /etc/samba/* /data/samba/. && cp /etc/webmin/* /data/webmin/.
+cp -r /etc/samba/* /data/samba/. && cp -r /etc/webmin/* /data/webmin/.
 fi
 wait
 ln -f /data/samba/* /etc/samba/ && ln -f /etc/webmin/* /data/webmin/
