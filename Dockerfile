@@ -22,7 +22,7 @@ apt-get -o Acquire::GzipIndexes=false update -y
 
 ENV TZ=Europe/Minsk
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt-get update && apt-get install webmin -y
+RUN apt-get update && apt-get install webmin net-tools iproute2 -y
 
 RUN sed -i 's/10000/80/g' /etc/webmin/miniserv.conf && \
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
